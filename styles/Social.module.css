@@ -1,0 +1,15 @@
+.social
+{
+    position: fixed;
+    top:50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.social ul li
+{
+    font-family: 'Fira Sans', sans-serif;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 20px;
+}

@@ -1,0 +1,36 @@
+.header
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 80px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo
+{
+  font-size: 32px;
+}
+
+.logo h1 span 
+{
+  color: red;
+}
+
+.menu ul
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menu ul li 
+{
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: 300;
+}
