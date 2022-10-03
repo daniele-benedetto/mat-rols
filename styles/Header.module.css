@@ -4,16 +4,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 80px;
+  padding: 0px 80px;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  background-color: var(--white);
 }
 
 .logo
 {
-  font-size: var(--big);
+  font-size: var(--small);
 }
 
 .logo h1 span:first-child 
@@ -36,7 +37,7 @@
 .menu ul li 
 {
   padding: 0 20px;
-  font-size: var(--medium);
+  font-size: var(--small);
   font-weight: var(--thin);
 }
 

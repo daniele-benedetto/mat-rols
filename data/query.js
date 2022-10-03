@@ -32,13 +32,6 @@ query {
       attributes {
         name,
         slug,
-        image {
-          data {
-            attributes {
-              url
-            }
-          }
-        }
       }
     }
   },
@@ -70,14 +63,14 @@ query {
 `;
 
 export const GET_CATEGORY_QUERY = `
-  query getCategory($slug: String!) {
+  query getCategory($slug: String!, $position: String!) {
     categories(filters: {slug: { eq: $slug}}) {
       data {
         id,
         attributes {
           name,
           slug,
-          posts {
+          posts(filters: {position: {eq: $position}}) {
             data {
               id,
               attributes {
@@ -98,6 +91,11 @@ export const GET_CATEGORY_QUERY = `
         }
       }
     },
+  }
+`;
+
+export const MENUS_QUERY = `
+  query {
     footers {
       data {
         id,

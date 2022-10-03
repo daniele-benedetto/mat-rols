@@ -1,16 +1,12 @@
 import Head from 'next/head';
-
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import Social from '../components/Social';
 import Cursor from '../components/Cursor';
 import Loader from '../components/Loader';
-
-import styles from '../styles/Home.module.css';
-
+import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
-
 import { useQuery } from 'urql';
 
 export default function Home() {

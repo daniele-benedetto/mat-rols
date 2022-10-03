@@ -1,21 +1,20 @@
 import { useQuery } from "urql";
 import { useRouter } from 'next/router';
 import Head from "next/head";
-import { GET_CATEGORY_QUERY } from "../../data/query";
+import {  MENUS_QUERY } from "../../data/query";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Social from '../../components/Social';
 import Cursor from '../../components/Cursor';
+import Posts from "../../components/Posts";
+import styles from '../../styles/Page.module.css';
 
 export default function Category(){
     
   const { query } = useRouter();
 
   const [results] = useQuery({
-    query: GET_CATEGORY_QUERY,
-    variables: {
-      slug: query.slug
-    }
+    query: MENUS_QUERY,
   });
 
   const {data, fetching, error} = results;
@@ -23,12 +22,9 @@ export default function Category(){
   if(fetching) return <p>Loading...</p>;
   if(error) return <p>Error... {error.message}</p>;
 
-  const posts = data.categories.data[0].attributes.posts.data;
   const primaryMenu = data.primaryMenus.data;
   const socials = data.socials.data;
   const footers = data.footers.data;
-
-  console.log(footers);
   
   return (
     <div>
@@ -44,12 +40,11 @@ export default function Category(){
         primaryMenu={primaryMenu}
       />
 
-      <main>
-        {posts.map((item, idx) => {
-          return (
-            <div key={idx}>{item.attributes.title}</div>
-          );
-        })}
+      <main className={styles.main}>
+        <section className={styles.col}>
+          <Posts position='sx' />
+          <Posts position='dx' />
+        </section>
       </main>
 
       <Footer 
@@ -67,3 +62,4 @@ export default function Category(){
   );
 
 };
+

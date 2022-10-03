@@ -1,0 +1,36 @@
+.main
+{
+    width: 100%;
+    max-width: 1480px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.col 
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    max-width: 1240px;
+}
+
+.col50
+{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col50 img 
+{
+    width: 100%;
+    padding: 20px;
+}
