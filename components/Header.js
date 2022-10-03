@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
-export default function Header({headerMenu}) {
+export default function Header({primaryMenu}) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -9,10 +9,12 @@ export default function Header({headerMenu}) {
       </div>
       <nav className={styles.menu}>
         <ul>
-          {headerMenu.map((item, idx) => {
+          {primaryMenu.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link href='/'>{item.name}</Link>
+                <Link href={item.attributes.slug}>
+                  {item.attributes.name}
+                </Link>
               </li>
             );
           })}

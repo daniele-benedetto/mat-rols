@@ -8,7 +8,7 @@ export default function Social({socialMenu}) {
         {socialMenu.map((item, idx) => {
           return (
             <li key={idx}>
-              <Link href='/'>{item.name}</Link>
+              <Link href={item.link}>{item.name}</Link>
             </li>
           );
         })}

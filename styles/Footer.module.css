@@ -6,8 +6,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: var(--thin);
+    font-size: var(--small);
 }
 
 .footer nav ul

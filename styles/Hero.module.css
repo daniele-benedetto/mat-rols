@@ -2,14 +2,14 @@
 {
     width: 100%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .container h2
 {
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
-    font-weight: 300;
+    font-size: var(--big);
+    font-weight: var(--thin);
     text-align: center;
 }
 
@@ -21,15 +21,33 @@
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    font-size: 180px;
-    font-weight: 900;
-    font-family: 'Fira Sans', sans-serif;
+    font-weight: var(--blackbold);
+    font-family: var(--fira), sans-serif;
+    position: relative;
 }
 
-.container ul li:last-child a
+.container ul li
 {
-    color: white;
-    -webkit-text-stroke: 2px #1b1b1b;
+    -webkit-text-stroke: 2px var(--black);
+    position: relative;
+}
+
+.container ul li a
+{
+    color: transparent;
+    z-index: -2;
+}
+
+.container ul li span
+{
+    position: absolute;
+    color: var(--black);
+    z-index: -2;
+}
+
+.container ul li:last-child span
+{
+    color: var(--black);
 }
 
 .col 
@@ -41,7 +59,19 @@
     margin-top: 40px;
 }
 
-.col p{
-    font-size: 24px;
-    font-weight: 300;
+.col p
+{
+    font-size: var(--medium);
+    font-weight: var(--thin);
+}
+
+.image
+{
+    width:100%;
+    max-width: 500px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }

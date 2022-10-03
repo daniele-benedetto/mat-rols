@@ -1,8 +1,26 @@
+:root
+{
+  --white: #fff;
+  --black: #1b1b1b;
+  --orange: #F75F34;
+  --pink: #EC3D69;
+  --fira: 'Fira Sans';
+  --inter: 'Inter';
+  --gig: 56px;
+  --big: 32px;
+  --medium: 24px;
+  --small: 16px;
+  --blackbold: 900;
+  --bold: 700;
+  --normal: 400;
+  --thin: 300;
+}
+
 html,
 body 
 {
-  font-family: 'Inter', sans-serif;
-  color: #1b1b1b;
+  font-family: var(--inter), sans-serif;
+  color: var(--black);
 }
 
 a, 
@@ -18,7 +36,7 @@ h2,
 h3,
 h4
 {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: var(--fira), sans-serif;
 }
 
 * 
@@ -27,3 +45,5 @@ h4
   margin: 0;
   padding: 0;
 }
+
+

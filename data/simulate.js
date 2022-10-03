@@ -1,11 +1,18 @@
+import Baw from '../public/baw.jpg';
+import Color from '../public/color.jpg';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { GrInstagram } from 'react-icons/gr';
+
 export const primaryMenu = [
     {
       name: 'Digital',
       link: '/',
+      image: Color,
     },
     {
       name: '& Analogic',
       link: '/',
+      image: Baw,
     }
   ];
 
@@ -41,15 +48,15 @@ export const primaryMenu = [
 
   export const socialMenu = [
     {
-      name: 'FB',
+      name: < FaFacebookF color='#1b1b1b' size={24} />,
       link: '/',
     },
     {
-      name: 'INSTA',
+      name: < GrInstagram color='#1b1b1b' size={24} />,
       link: '/',
     },
     {
-      name: 'IN',
+      name: <FaLinkedinIn color='#1b1b1b' size={24} />,
       link: '/',
     },
   ];

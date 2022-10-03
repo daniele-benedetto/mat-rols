@@ -1,13 +1,33 @@
 import Head from 'next/head';
-import Link from 'next/link';
+
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import styles from '../styles/Home.module.css';
-import { primaryMenu, headerMenu, footerMenu, socialMenu } from '../data/simulate';
 import Footer from '../components/Footer';
 import Social from '../components/Social';
+import Cursor from '../components/Cursor';
+
+import styles from '../styles/Home.module.css';
+
+import { HOME_QUERY } from '../data/query';
+
+import { useQuery } from 'urql';
+
+import { headerMenu, footerMenu, socialMenu } from '../data/simulate';
 
 export default function Home() {
+
+  const [results] = useQuery({
+    query: HOME_QUERY
+  });
+
+  const {data, fetching, error} = results;
+
+  if(fetching) return <p>Loading...</p>;
+  if(error) return <p>Error... {error.message}</p>
+    
+  const home = data.home.data.attributes;
+  const primaryMenu = data.primaryMenus.data;
+  const categories = data.categories.data;
 
   return (
     <div>
@@ -20,17 +40,18 @@ export default function Home() {
       </Head>
 
       <Header
-        headerMenu={headerMenu}
+        primaryMenu={primaryMenu}
       />
 
       <main className={styles.main}>
 
-        <Hero
-          title='👋, my name is Mattia and I am a photographer'
-          textLeft='Based in Modena, Italy'
-          textRight='I shoot, edit, develop and print the best moments'
-          primaryMenu={primaryMenu}
-        />
+          <Hero
+            title={home.title}
+            textLeft={home.textLeft}
+            textRight={home.textRight}
+            image={home.image.data.attributes.url}
+            categories={categories}
+          />
 
       </main>
 
@@ -42,6 +63,8 @@ export default function Home() {
       <Social 
         socialMenu={socialMenu}
       />
+
+      <Cursor />
 
     </div>
   );

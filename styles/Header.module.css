@@ -13,12 +13,17 @@
 
 .logo
 {
-  font-size: 32px;
+  font-size: var(--big);
 }
 
-.logo h1 span 
+.logo h1 span:first-child 
 {
-  color: red;
+  color: var(--pink);
+}
+
+.logo h1 span:last-child 
+{
+  color: var(--orange);
 }
 
 .menu ul
@@ -31,6 +36,18 @@
 .menu ul li 
 {
   padding: 0 20px;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: var(--medium);
+  font-weight: var(--thin);
+}
+
+.menu ul li:hover:nth-child(odd) a
+{
+  border-bottom: 5px solid var(--pink);
+  transition: all 0.1s linear;
+}
+
+.menu ul li:hover:nth-child(even) a
+{
+  border-bottom: 5px solid var(--orange);
+  transition: all 0.1s linear;
 }
