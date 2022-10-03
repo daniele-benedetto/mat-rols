@@ -6,8 +6,12 @@
     position: absolute;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+a:hover .cursor
+{
+    background-color: red;
 }

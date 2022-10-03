@@ -1,14 +1,19 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Social.module.css';
 
-export default function Social({socialMenu}) {
+export default function Social({socials}) {
   return (
     <div className={styles.social}>
       <ul>
-        {socialMenu.map((item, idx) => {
+        {socials.map((item, idx) => {
           return (
             <li key={idx}>
-              <Link href={item.link}>{item.name}</Link>
+              <Link href={`https:\\${item.attributes.slug}`}>
+                <a target='_blank'>
+                  <Image width={30} height={30} src={item.attributes.image.data.attributes.url} />
+                </a>
+              </Link>
             </li>
           );
         })}

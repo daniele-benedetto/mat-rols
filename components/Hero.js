@@ -25,7 +25,7 @@ export default function Hero({title, textLeft, textRight, categories, image}) {
           return (
             <li key={idx} >
               <span>{item.attributes.name}</span>
-              <Link href={item.attributes.name}>
+              <Link href={`/category/${item.attributes.slug}`}>
                 <a>{item.attributes.name}</a>
               </Link>
             </li>

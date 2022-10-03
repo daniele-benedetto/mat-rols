@@ -5,14 +5,13 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import Social from '../components/Social';
 import Cursor from '../components/Cursor';
+import Loader from '../components/Loader';
 
 import styles from '../styles/Home.module.css';
 
 import { HOME_QUERY } from '../data/query';
 
 import { useQuery } from 'urql';
-
-import { headerMenu, footerMenu, socialMenu } from '../data/simulate';
 
 export default function Home() {
 
@@ -22,12 +21,14 @@ export default function Home() {
 
   const {data, fetching, error} = results;
 
-  if(fetching) return <p>Loading...</p>;
-  if(error) return <p>Error... {error.message}</p>
+  if(fetching) return <Loader />;
+  if(error) return <p>Error... {error.message}</p>;
     
   const home = data.home.data.attributes;
   const primaryMenu = data.primaryMenus.data;
   const categories = data.categories.data;
+  const socials = data.socials.data;
+  const footers = data.footers.data;
 
   return (
     <div>
@@ -56,12 +57,12 @@ export default function Home() {
       </main>
 
       <Footer 
-        footerMenu={footerMenu}
+        footers={footers}
         text='Designed and developed by Daniele Benedetto'
       />
 
       <Social 
-        socialMenu={socialMenu}
+        socials={socials}
       />
 
       <Cursor />

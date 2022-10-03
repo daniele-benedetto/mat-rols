@@ -25,17 +25,11 @@
 .loader div:first-child
 {
     justify-content: flex-end;
-    transform: translateX(-100%);
 }
 
 .loader div:last-child
 {
     justify-content: flex-start;
-    transform: translateX(100%);
 }
 
-.loader:hover div
-{
-    transform: translateX(0);
-}
 

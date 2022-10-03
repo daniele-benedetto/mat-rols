@@ -12,7 +12,7 @@ export default function Header({primaryMenu}) {
           {primaryMenu.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link href={item.attributes.slug}>
+                <Link href={`/category/${item.attributes.slug}`}>
                   {item.attributes.name}
                 </Link>
               </li>
