@@ -1,7 +1,7 @@
 .cursor {
     width: 40px;
     height: 40px;
-    border: 3px solid var(--black);
+    border: 2px solid var(--black);
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: invert(1);
 }
 
 a:hover .cursor

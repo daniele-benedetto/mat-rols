@@ -1,0 +1,64 @@
+.modal
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    background-color: var(--black);
+    opacity: 0;
+    animation: opacity 0.5s 1;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    color: var(--white);
+    padding: 40px;
+    cursor: pointer;
+}
+
+@keyframes opacity 
+{
+  from {opacity:  0;}
+  to {opacity: 0.99;}
+}
+
+
+.modal img 
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+}
+
+.modal div 
+{
+    width: 100%;
+    max-width: 600px;
+}
+
+.modal span 
+{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.modal div h4
+{
+    font-size: var(--medium);
+    font-weight: var(--normal);
+    font-family: var(--inter), sans-serif;
+}
+
+.modal div p
+{
+    font-size: var(--small);
+    font-weight: var(--thin);
+    font-family: var(--inter), sans-serif;
+}

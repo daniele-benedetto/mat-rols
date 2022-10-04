@@ -28,6 +28,7 @@ export default function Hero({title, textLeft, textRight, categories, image}) {
               <Link href={`/category/${item.attributes.slug}`}>
                 <a>{item.attributes.name}</a>
               </Link>
+              <div></div>
             </li>
           );
         })}

@@ -8,6 +8,7 @@ import Loader from '../components/Loader';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
 import { useQuery } from 'urql';
+import { useState } from 'react';
 
 export default function Home() {
 

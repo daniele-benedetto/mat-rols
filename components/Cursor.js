@@ -17,7 +17,6 @@ export default function Cursor() {
 
   return (
     <div className={styles.cursor} ref={cursorRef}>
-      <ImArrowUpRight2 color='#1b1b1b' size={24} />
     </div>
   );
 
