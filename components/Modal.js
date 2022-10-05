@@ -11,15 +11,13 @@ export default function Modal({item, setModal}) {
     <section onClick={() => setModal(false)} className={styles.modal}>
       <div>
         <img src={image} alt={title} />
-        <div>
-          <h4>{title}</h4>
-          <p>{description}</p>
-        </div>
+        <h4>{title}</h4>
+        <p>{description}</p>
       </div>
       <AiOutlineClose 
         onClick={() => setModal(false)} 
         size='40px'
-        color={'#ffffff'}
+        color={'#fff'}
       />
     </section>
   );

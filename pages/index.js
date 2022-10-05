@@ -1,13 +1,12 @@
+import { useQuery } from 'urql';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
-import Social from '../components/Social';
 import Cursor from '../components/Cursor';
-import Loader from '../components/Loader';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
-import { useQuery } from 'urql';
+import { menu, footer, category}  from '../data/local';
 
 export default function Home() {
 
@@ -21,10 +20,6 @@ export default function Home() {
   if(error) return <p>Error... {error.message}</p>;
     
   const home = data.home.data.attributes;
-  const primaryMenu = data.primaryMenus.data;
-  const categories = data.categories.data;
-  const socials = data.socials.data;
-  const footers = data.footers.data;
 
   return (
     <div>
@@ -38,7 +33,7 @@ export default function Home() {
       </Head>
 
       <Header
-        primaryMenu={primaryMenu}
+        menu={menu}
       />
 
       <main className={styles.main}>
@@ -48,21 +43,17 @@ export default function Home() {
             textLeft={home.textLeft}
             textRight={home.textRight}
             image={home.image.data.attributes.url}
-            categories={categories}
+            category={category}
           />
 
       </main>
 
       <Footer 
-        footers={footers}
-        text='Designed and developed by Daniele Benedetto'
+        footer={footer}
+        copyright='Designed and developed by Daniele Benedetto'
       />
 
-      <Social 
-        socials={socials}
-      />
-
-      <Cursor />
+      <Cursor/>
 
     </div>
   );

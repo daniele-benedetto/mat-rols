@@ -4,11 +4,10 @@ import { useState } from "react";
 
 
 export default function Posts({posts}) {
-
   return (
     <div className={styles.col50}>
       {posts.map((item, idx) => {
-          const [modal, setModal] = useState(false);
+        const [modal, setModal] = useState(false);
         return (
           <div className={styles.post}>
             <img 

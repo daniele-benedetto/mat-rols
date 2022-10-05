@@ -1,21 +1,23 @@
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
+import Social from './Social';
 
-export default function Footer({footers, text}) {
+export default function Footer({footer, copyright}) {
   return (
     <footer className={styles.footer}>
       <nav>
         <ul>
-          {footers.map((item, idx) => {
+          {footer.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link href={`/${item.attributes.slug}`}>{item.attributes.name}</Link>
+                <Link href={`/${item.url}`}>{item.name}</Link>
               </li>
             );
           })}
         </ul>
       </nav>
-      <p>{text}</p>
+      <Social/>
+      <p>{copyright}</p>
     </footer>
   );
 }

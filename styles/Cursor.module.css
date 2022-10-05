@@ -3,17 +3,23 @@
     height: 40px;
     border: 2px solid var(--black);
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: invert(1);
-    z-index: 999;
+    z-index: 9999;
 }
+ 
+ .cursorhidden 
+ {
+    opacity: 0;
+ }
 
-a:hover .cursor
-{
-    background-color: red;
+
+.cursorhover {
+   transform: translate(-50%, -50%) scale(1.25);
+   background-color: white;
+   transition: all 0.3s cubic-bezier(.215, .61, .355, 1);
 }

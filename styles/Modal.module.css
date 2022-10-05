@@ -15,7 +15,7 @@
     animation: opacity 0.5s 1;
     animation-fill-mode: forwards;
     z-index: 1;
-    color: var(--white);
+    color: var(--black);
     padding: 40px;
     cursor: pointer;
 }
@@ -35,10 +35,12 @@
     max-width: 880px;
 }
 
-.modal div 
+.modal div
 {
     width: 100%;
-    max-width: 550px;
+    max-width: 800px;
+    background-color: var(--white);
+    box-shadow: 5px 5px 20px rgba(0,0,0,.30);
 }
 
 .modal svg 
@@ -54,6 +56,7 @@
     font-size: var(--standard);
     font-weight: var(--thin);
     font-family: var(--inter), sans-serif;
+    padding: 5px;
 }
 
 .modal div p
@@ -61,4 +64,5 @@
     font-size: var(--small);
     font-weight: var(--thin);
     font-family: var(--inter), sans-serif;
+    padding: 5px;
 }

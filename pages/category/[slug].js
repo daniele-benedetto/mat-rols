@@ -1,21 +1,17 @@
-import { useQuery } from "urql";
-import { useRouter } from 'next/router';
 import Head from "next/head";
-import {  MENUS_QUERY,GET_CATEGORY_QUERY } from "../../data/query";
+import { useRouter } from 'next/router';
+import { useQuery } from "urql";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Social from '../../components/Social';
 import Cursor from '../../components/Cursor';
 import Posts from "../../components/Posts";
 import styles from '../../styles/Page.module.css';
+import {  GET_CATEGORY_QUERY } from "../../data/query";
+import { menu, footer, socials }  from '../../data/local';
 
 export default function Category(){
     
   const { query } = useRouter();
-
-  const [results] = useQuery({
-    query: MENUS_QUERY,
-  });
 
   const [resultsPostsSx] = useQuery(
     {
@@ -35,24 +31,16 @@ export default function Category(){
       }
   });
 
-  const { data: dataPS, fetching: fetchingPS, error: errorPS } = resultsPostsSx;
-  const { data: dataPD, fetching: fetchingPD, error: errorPD } = resultsPostsDx;
-  const { data: data, fetching: fetching, error: error } = results;
-
-  if(fetchingPS) return <p>Loading...</p>;
-  if(errorPS) return <p>Error... {error.message}</p>;
-
-  if(fetchingPD) return <p>Loading...</p>;
-  if(errorPD) return <p>Error... {error.message}</p>;
+  const { data: data, fetching: fetching, error: error } = resultsPostsSx;
+  const { data: data2, fetching: fetching2, error: error2 } = resultsPostsDx;
 
   if(fetching) return <p>Loading...</p>;
-  if(error) return <p>Error... {error.message}</p>;
+  if(error) return <p>Error... {error.message} Error2... {error2.message}</p>;
+  if(fetching2) return <p>Loading...</p>;
+  if(error2) return <p>Error... {error.message} Error2... {error2.message}</p>;
 
-  const primaryMenu = data.primaryMenus.data;
-  const socials = data.socials.data;
-  const footers = data.footers.data;
-  const postsSx = dataPS.categories.data[0].attributes.posts.data;
-  const postsDx = dataPD.categories.data[0].attributes.posts.data;
+  const postsSx = data.categories.data[0].attributes.posts.data;
+  const postsDx = data2.categories.data[0].attributes.posts.data;
   
   return (
     <div>
@@ -65,7 +53,7 @@ export default function Category(){
       </Head>
 
       <Header
-        primaryMenu={primaryMenu}
+        menu={menu}
       />
 
       <main className={styles.main}>
@@ -76,12 +64,9 @@ export default function Category(){
       </main>
 
       <Footer 
-        footers={footers}
-        text='Designed and developed by Daniele Benedetto'
-      />
-
-      <Social 
+        footer={footer}
         socials={socials}
+        copyright='Designed and developed by Daniele Benedetto'
       />
 
       <Cursor />

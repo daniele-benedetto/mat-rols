@@ -17,48 +17,6 @@ query {
       }
     }
   },
-  primaryMenus {
-    data {
-      id,
-      attributes {
-        name,
-        slug
-      }
-    }
-  },
-  categories {
-    data {
-      id,
-      attributes {
-        name,
-        slug,
-      }
-    }
-  },
-  footers {
-    data {
-      id,
-      attributes {
-        name,
-        slug,
-      }
-    }
-  },
-  socials {
-    data {
-      id,
-      attributes {
-        slug,
-        image {
-          data {
-            attributes {
-              url
-            }
-          }
-        }
-      }
-    }
-  },
 }
 `;
 
@@ -88,44 +46,6 @@ export const GET_CATEGORY_QUERY = `
               }
             }
           }
-        }
-      }
-    },
-  }
-`;
-
-export const MENUS_QUERY = `
-  query {
-    footers {
-      data {
-        id,
-        attributes {
-          name,
-          slug,
-        }
-      }
-    },
-    socials {
-      data {
-        id,
-        attributes {
-          slug,
-          image {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
-        }
-      }
-    },
-    primaryMenus {
-      data {
-        id,
-        attributes {
-          name,
-          slug
         }
       }
     },
