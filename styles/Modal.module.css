@@ -32,27 +32,27 @@
     display: flex;
     position: relative;
     width: 100%;
-    max-width: 600px;
-    padding: 0;
+    max-width: 880px;
 }
 
 .modal div 
 {
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
 }
 
-.modal span 
+.modal svg 
 {
     position: absolute;
     right: 20px;
     top: 20px;
+    font-weight: bold;
 }
 
 .modal div h4
 {
-    font-size: var(--medium);
-    font-weight: var(--normal);
+    font-size: var(--standard);
+    font-weight: var(--thin);
     font-family: var(--inter), sans-serif;
 }
 

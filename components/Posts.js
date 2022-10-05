@@ -10,7 +10,7 @@ export default function Posts({posts}) {
       {posts.map((item, idx) => {
           const [modal, setModal] = useState(false);
         return (
-          <>
+          <div className={styles.post}>
             <img 
               key={idx} 
               src={item.attributes.image.data.attributes.url}
@@ -22,7 +22,7 @@ export default function Posts({posts}) {
                 setModal={setModal}
               />
             }
-          </>
+          </div>
         );
       })}
     </div>

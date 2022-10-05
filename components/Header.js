@@ -5,7 +5,11 @@ export default function Header({primaryMenu}) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <h1>mat<span>.</span>rols<span>.</span></h1>
+        <h1>
+          <Link href='/'>
+            <a>mat<span>.</span>rols<span>.</span></a>
+          </Link>
+        </h1>
       </div>
       <nav className={styles.menu}>
         <ul>

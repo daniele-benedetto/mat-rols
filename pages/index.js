@@ -8,7 +8,6 @@ import Loader from '../components/Loader';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
 import { useQuery } from 'urql';
-import { useState } from 'react';
 
 export default function Home() {
 
@@ -18,7 +17,7 @@ export default function Home() {
 
   const {data, fetching, error} = results;
 
-  if(fetching) return <Loader />;
+  if(fetching) return <p>...</p>;
   if(error) return <p>Error... {error.message}</p>;
     
   const home = data.home.data.attributes;

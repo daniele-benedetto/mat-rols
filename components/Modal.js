@@ -1,4 +1,5 @@
 import styles from '../styles/Modal.module.css';
+import {AiOutlineClose} from 'react-icons/ai';
 
 export default function Modal({item, setModal}) {
 
@@ -7,15 +8,19 @@ export default function Modal({item, setModal}) {
   const description = item.attributes.description;
 
   return (
-    <div onClick={() => setModal(false)} className={styles.modal}>
-      <img src={image} alt={title} />
+    <section onClick={() => setModal(false)} className={styles.modal}>
       <div>
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <img src={image} alt={title} />
+        <div>
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </div>
       </div>
-      <span onClick={() => setModal(false)}>
-        X
-      </span>
-    </div>
+      <AiOutlineClose 
+        onClick={() => setModal(false)} 
+        size='40px'
+        color={'#ffffff'}
+      />
+    </section>
   );
 }

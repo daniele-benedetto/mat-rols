@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from 'next/link';
 import styles from '../styles/Hero.module.css';
-import Image from "next/image";
 
 export default function Hero({title, textLeft, textRight, categories, image}) {
 
@@ -20,7 +19,7 @@ export default function Hero({title, textLeft, textRight, categories, image}) {
   return (
     <section className={styles.container}>
       <h2>{title}</h2>
-      <ul ref={targetRef} style={{ fontSize: dimensions.width / 8 }}>
+      <ul ref={targetRef} style={{ fontSize: dimensions.width / 7 }}>
         {categories.map((item, idx) => {
           return (
             <li key={idx} >
@@ -38,8 +37,15 @@ export default function Hero({title, textLeft, textRight, categories, image}) {
         <p>{textRight}</p>
       </div>
       <div className={styles.image}>
-        <Image width={600} height={600} src={image} alt={image} />
+        <img src={image} alt={image} />
       </div>
     </section>
   );
 }
+
+
+
+          // backgroundImage: `url('${image}')`,
+          // backgroundRepeat: 'no-repeat',
+          // backgroundPosition: 'center, center',
+          // backgroundSize: '80% auto',
