@@ -7,6 +7,8 @@ import Cursor from '../components/Cursor';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
 import { menu, footer, category}  from '../data/local';
+import { addLinkEvents, addEventListeners, removeEventListeners } from '../util/mouseAction';
+
 
 export default function Home() {
 
@@ -44,6 +46,9 @@ export default function Home() {
             textRight={home.textRight}
             image={home.image.data.attributes.url}
             category={category}
+            addLinkEvents={addLinkEvents}
+            addEventListeners={addEventListeners}
+            removeEventListeners={removeEventListeners}
           />
 
       </main>
@@ -53,7 +58,11 @@ export default function Home() {
         copyright='Designed and developed by Daniele Benedetto'
       />
 
-      <Cursor/>
+      <Cursor
+        addLinkEvents={addLinkEvents}
+        addEventListeners={addEventListeners}
+        removeEventListeners={removeEventListeners}
+      />
 
     </div>
   );

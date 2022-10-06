@@ -89,6 +89,12 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: 600px;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.container svg path
+{
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
 }
 
 .col 
