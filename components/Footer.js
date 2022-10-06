@@ -13,7 +13,7 @@ export default function Footer({
           {footer.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link href={`/${item.url}`}>
+                <Link href={item.url}>
                   {item.name}
                 </Link>
               </li>

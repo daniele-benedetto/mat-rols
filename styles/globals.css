@@ -1,3 +1,67 @@
+@font-face 
+{
+  font-family: "Fira sans";
+  src: url('../fonts/FiraSans/FiraSans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face 
+{
+  font-family: "Fira sans";
+  src: url('../fonts/FiraSans/FiraSans-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face 
+{
+  font-family: "Fira sans";
+  src: url('../fonts/FiraSans/FiraSans-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+@font-face 
+{
+  font-family: "Fira sans";
+  src: url('../fonts/FiraSans/FiraSans-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face 
+{
+  font-family: "Inter";
+  src: url('../fonts/Inter/Inter-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face 
+{
+  font-family: "Inter";
+  src: url('../fonts/Inter/Inter-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face 
+{
+  font-family: "Inter";
+  src: url('../fonts/Inter/Inter-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root
 {
   --white: #fff;
@@ -15,6 +79,18 @@
   --bold: 700;
   --normal: 400;
   --thin: 300;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
 }
 
 html,
@@ -46,9 +122,4 @@ h4
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-a:hover body
-{
-  background-color: red!important;
 }

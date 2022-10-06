@@ -3,7 +3,7 @@ import styles from '../styles/Header.module.css';
 
 export default function Header({
   menu
-}) {
+}) {  
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -17,9 +17,15 @@ export default function Header({
         <ul>
           {menu.map((item, idx) => {
             return (
-              <li key={idx}>
-                <Link href={`/category/${item.url}`}>
-                  {item.name}
+              <li  
+                key={idx}
+              >
+                <Link 
+                  href={`${item.url}`}
+                >
+                  <a className={item.button}>
+                    {item.name}
+                  </a>
                 </Link>
               </li>
             );

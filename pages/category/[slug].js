@@ -8,6 +8,7 @@ import Posts from "../../components/Posts";
 import styles from '../../styles/Page.module.css';
 import {  GET_CATEGORY_QUERY } from "../../data/query";
 import { menu, footer, socials }  from '../../data/local';
+import {addLinkEvents, addEventListeners, removeEventListeners} from '../../util/mouseAction';
 
 export default function Category(){
     
@@ -49,7 +50,6 @@ export default function Category(){
         <title>Arlotta Mattia - {query.slug}</title>
         <meta name="description" content={`Collection of my photos from the category ${query.slug}`} />
         <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
       </Head>
 
       <Header
@@ -69,7 +69,11 @@ export default function Category(){
         copyright='Designed and developed by Daniele Benedetto'
       />
 
-      <Cursor />
+      <Cursor 
+        addLinkEvents={addLinkEvents}
+        addEventListeners={addEventListeners}
+        removeEventListeners={removeEventListeners}      
+      />
 
     </div>
   );

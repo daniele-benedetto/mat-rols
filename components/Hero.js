@@ -9,7 +9,7 @@ export default function Hero({
   textRight, 
   category, 
   image,
-  addLinkEvents
+  addPathEvent
 }) {
 
   const targetRef = useRef();
@@ -25,7 +25,7 @@ export default function Hero({
     }
   }, []);
 
-  addLinkEvents(setLinkHover);
+  addPathEvent(setLinkHover);
   
   return (
     <section className={styles.container}>
@@ -36,7 +36,7 @@ export default function Hero({
             <li key={idx} >
               <span>{item.name}</span>
               <Link href={`${item.url}`}>
-                <a>{item.name}</a>
+                <a id={`category${idx}`}>{item.name}</a>
               </Link>
             </li>
           );
@@ -51,8 +51,8 @@ export default function Hero({
       </div>
       <svg viewBox="0 0 200 200">
         <path 
-          fill={linkHover ? path[0].fill : path[1].fill} 
-          d={linkHover ? path[0].d : path[1].d} 
+          fill={linkHover ? path[1].fill : path[0].fill} 
+          d={linkHover ? path[1].d : path[0].d} 
           transform="translate(100 100)" 
         />
       </svg>

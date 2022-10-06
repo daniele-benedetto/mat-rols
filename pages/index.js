@@ -7,8 +7,7 @@ import Cursor from '../components/Cursor';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
 import { menu, footer, category}  from '../data/local';
-import { addLinkEvents, addEventListeners, removeEventListeners } from '../util/mouseAction';
-
+import { addLinkEvents, addEventListeners, removeEventListeners, addPathEvent } from '../util/mouseAction';
 
 export default function Home() {
 
@@ -31,7 +30,7 @@ export default function Home() {
         <meta name="description" content="Personal portfolio of the best photos I made" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#1b1b1b" />
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+        <link rel="preload" fetchpriority="high" as="image" href={home.image.data.attributes.url} type="image/webp" />
       </Head>
 
       <Header
@@ -46,9 +45,7 @@ export default function Home() {
             textRight={home.textRight}
             image={home.image.data.attributes.url}
             category={category}
-            addLinkEvents={addLinkEvents}
-            addEventListeners={addEventListeners}
-            removeEventListeners={removeEventListeners}
+            addPathEvent={addPathEvent}
           />
 
       </main>

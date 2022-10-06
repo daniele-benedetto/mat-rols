@@ -9,6 +9,13 @@ export const addLinkEvents = (hover) => {
   });
 };
 
+export const addPathEvent = (hover) => {
+  document.querySelectorAll('#category0').forEach((el) => {
+    el.addEventListener('mouseover', () => hover(true));
+    el.addEventListener('mouseout', () => hover(false));
+  });
+};
+
 export const addEventListeners = (move, enter, leave) => {
   document.addEventListener('mousemove', move);
   document.addEventListener('mouseenter', enter);
