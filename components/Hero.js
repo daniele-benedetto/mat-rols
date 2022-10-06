@@ -26,6 +26,7 @@ export default function Hero({
   }, []);
 
   addLinkEvents(setLinkHover);
+  
   return (
     <section className={styles.container}>
       <h2>{title}</h2>
@@ -48,7 +49,7 @@ export default function Hero({
       <div className={styles.image}>
         <img src={image} alt={image} />
       </div>
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 200 200">
         <path 
           fill={linkHover ? path[0].fill : path[1].fill} 
           d={linkHover ? path[0].d : path[1].d} 

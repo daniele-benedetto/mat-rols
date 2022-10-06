@@ -3,7 +3,9 @@ import Modal from './Modal';
 import { useState } from "react";
 
 
-export default function Posts({posts}) {
+export default function Posts({
+  posts
+}) {
   return (
     <div className={styles.col50}>
       {posts.map((item, idx) => {

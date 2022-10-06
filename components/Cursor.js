@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/Cursor.module.css';
 import { ImArrowUpRight2 } from 'react-icons/im';
 
-export default function Cursor({addLinkEvents, addEventListeners, removeEventListeners}) {
+export default function Cursor({
+  addLinkEvents, 
+  addEventListeners, 
+  removeEventListeners
+}) {
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hidden, setHidden] = useState(false);

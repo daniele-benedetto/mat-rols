@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
-export default function Header({menu}) {
+export default function Header({
+  menu
+}) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

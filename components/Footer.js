@@ -2,7 +2,10 @@ import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
 import Social from './Social';
 
-export default function Footer({footer, copyright}) {
+export default function Footer({
+  footer, 
+  copyright
+}) {
   return (
     <footer className={styles.footer}>
       <nav>
@@ -10,7 +13,9 @@ export default function Footer({footer, copyright}) {
           {footer.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link href={`/${item.url}`}>{item.name}</Link>
+                <Link href={`/${item.url}`}>
+                  {item.name}
+                </Link>
               </li>
             );
           })}

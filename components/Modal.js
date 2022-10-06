@@ -1,7 +1,9 @@
 import styles from '../styles/Modal.module.css';
 import {AiOutlineClose} from 'react-icons/ai';
 
-export default function Modal({item, setModal}) {
+export default function Modal({
+  item, 
+  setModal}) {
 
   const image = item.attributes.image.data.attributes.url;
   const title = item.attributes.title;
