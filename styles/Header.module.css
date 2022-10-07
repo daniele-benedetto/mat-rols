@@ -68,3 +68,88 @@
   border-bottom: 5px solid var(--orange);
   transition: all 0.1s linear;
 }
+
+@media (max-width: 768px) 
+{
+  .logo
+  {
+    z-index: 2;
+    color: var(--white);
+  }
+  .menu 
+  {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    display: flex;
+    z-index: 1;
+  }
+
+  .menu ul
+  {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 120px;
+    width: 100%;
+  }
+
+  .menu ul li 
+  {
+    color: var(--white);
+    font-size: var(--big);
+    font-family: var(--fira);
+    font-weight: var(--blackbold);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+
+  .menu ul li:nth-child(odd)
+  {
+    border-bottom: 5px solid var(--pink);
+    transition: all 0.1s linear;
+  }
+
+  .menu ul li:nth-child(even)
+  {
+    border-bottom: 5px solid var(--orange);
+    transition: all 0.1s linear;
+  }
+
+  .menu ul li:last-child
+  {
+    border: none;
+    text-align: center;
+  }
+
+  .menu ul li:hover:nth-child(odd) a
+  {
+    border-bottom: none;
+  }
+
+  .menu ul li:hover:nth-child(even) a
+  {
+    border-bottom: none;
+  }
+
+  .button 
+  {
+    background-color: none;
+    color: white;
+    border-radius: none;
+    padding: 0;
+    box-shadow: none;
+    font-size: var(--standard);
+    font-weight: var(--thin);
+    text-decoration: underline;
+  }
+
+  .button:hover
+  {
+    border: none!important;
+    background-color: transparent;
+    color: var(--white);
+  }
+}

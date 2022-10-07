@@ -21,21 +21,20 @@ query {
 `;
 
 export const GET_CATEGORY_QUERY = `
-  query getCategory($slug: String!, $position: String!) {
+  query getCategory($slug: String!) {
     categories(filters: {slug: { eq: $slug}}) {
       data {
         id,
         attributes {
           name,
           slug,
-          posts(filters: {position: {eq: $position}}) {
+          posts {
             data {
               id,
               attributes {
                 title,
                 description,
                 slug,
-                position,
                 image {
                   data {
                     attributes {

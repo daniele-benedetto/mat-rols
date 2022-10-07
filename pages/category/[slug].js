@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Cursor from '../../components/Cursor';
 import Posts from "../../components/Posts";
+import Summary from "../../components/Summary";
 import styles from '../../styles/Page.module.css';
 import {  GET_CATEGORY_QUERY } from "../../data/query";
 import { menu, footer, socials }  from '../../data/local';
@@ -14,34 +15,20 @@ export default function Category(){
     
   const { query } = useRouter();
 
-  const [resultsPostsSx] = useQuery(
+  const [results] = useQuery(
     {
       query: GET_CATEGORY_QUERY,
       variables: {
         slug: query.slug,
-        position: 'sx',
       }
   });
 
-  const [resultsPostsDx] = useQuery(
-    {
-      query: GET_CATEGORY_QUERY,
-      variables: {
-        slug: query.slug,
-        position: 'dx',
-      }
-  });
-
-  const { data: data, fetching: fetching, error: error } = resultsPostsSx;
-  const { data: data2, fetching: fetching2, error: error2 } = resultsPostsDx;
+  const { data: data, fetching: fetching, error: error } = results;
 
   if(fetching) return <p>Loading...</p>;
   if(error) return <p>Error... {error.message} Error2... {error2.message}</p>;
-  if(fetching2) return <p>Loading...</p>;
-  if(error2) return <p>Error... {error.message} Error2... {error2.message}</p>;
 
-  const postsSx = data.categories.data[0].attributes.posts.data;
-  const postsDx = data2.categories.data[0].attributes.posts.data;
+  const cateogiries = data.categories.data[0].attributes.categories.data;
   
   return (
     <div>
@@ -58,8 +45,8 @@ export default function Category(){
 
       <main className={styles.main}>
         <section className={styles.col}>
-          <Posts posts={postsSx} />
-          <Posts posts={postsDx} />
+          <Summary posts={cateogiries} />
+          <Posts posts={cateogiries} />
         </section>
       </main>
 
