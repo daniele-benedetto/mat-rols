@@ -16,14 +16,14 @@ function MyApp({ Component, pageProps, router }) {
         variants={{
           initial: {
             opacity: 0,
-            y: 25
+            y: 30
           },
           animate: {
             y: 0,
             opacity: 1,
             transition:{
               delay: 0.5,
-              x: { duration: 3 },
+              x: { duration: 5 },
               animate: { y: 0 },
               default: { ease: "linear" }
             }

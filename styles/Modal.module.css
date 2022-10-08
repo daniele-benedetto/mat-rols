@@ -17,7 +17,6 @@
     z-index: 1;
     color: var(--black);
     padding: 40px;
-    cursor: pointer;
 }
 
 @keyframes opacity 
@@ -32,15 +31,13 @@
     display: flex;
     position: relative;
     width: 100%;
-    max-width: 880px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,.30);
 }
 
 .modal div
 {
     width: 100%;
-    max-width: 800px;
-    background-color: var(--white);
-    box-shadow: 5px 5px 20px rgba(0,0,0,.30);
+    max-width: 1020px;
 }
 
 .modal svg 
@@ -49,6 +46,7 @@
     right: 20px;
     top: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .modal div h4
@@ -65,4 +63,10 @@
     font-weight: var(--thin);
     font-family: var(--inter), sans-serif;
     padding: 5px;
+}
+
+.vertical
+{
+    width: auto!important;
+    max-height: 90vh;
 }

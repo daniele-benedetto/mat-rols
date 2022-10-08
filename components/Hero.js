@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Link from 'next/link';
 import styles from '../styles/Hero.module.css';
-import { path } from "../data/local";
 
 export default function Hero({
   title, 
@@ -9,7 +8,8 @@ export default function Hero({
   textRight, 
   category, 
   image,
-  addPathEvent
+  addPathEvent,
+  path
 }) {
 
   const targetRef = useRef();

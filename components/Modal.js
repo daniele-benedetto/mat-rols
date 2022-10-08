@@ -3,23 +3,30 @@ import {AiOutlineClose} from 'react-icons/ai';
 
 export default function Modal({
   item, 
-  setModal}) {
+  setModal
+}) {
 
-  const image = item.attributes.image.data.attributes.url;
-  const title = item.attributes.title;
-  const description = item.attributes.description;
+  const img = document.getElementById(`img${item.attributes.title}`);
+  const format = styles.vertical;
+  let vertical = true;
+  const imgWidth = img.getBoundingClientRect().width;
+  const imgHeight = img.getBoundingClientRect().height;
+  if(imgWidth > imgHeight) {vertical = false} else {vertical = true}
 
   return (
     <section onClick={() => setModal(false)} className={styles.modal}>
       <div>
-        <img src={image} alt={title} />
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <img 
+          id={`img${item.attributes.title}`} 
+          src={item.attributes.image.data.attributes.url} 
+          alt={item.attributes.title}
+          className={vertical && format}
+        />
       </div>
       <AiOutlineClose 
         onClick={() => setModal(false)} 
         size='40px'
-        color={'#fff'}
+        color={'var(--white)'}
       />
     </section>
   );

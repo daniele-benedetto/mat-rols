@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
+import Button from './Button';
 
 export default function Header({
   menu
@@ -30,6 +31,12 @@ export default function Header({
               </li>
             );
           })}
+          <Button
+            content='arlottamattia@gmail.it'
+            color='var(--white)'
+            backgroundColor='var(--black)'
+            url='www.google.com'
+          />
         </ul>
       </nav>
     </header>

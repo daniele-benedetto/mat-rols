@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import Cursor from '../components/Cursor';
 import styles from '../styles/Page.module.css';
 import { HOME_QUERY } from '../data/query';
-import { menu, footer, category}  from '../data/local';
+import { menu, footer, category, path}  from '../data/local';
 import { addLinkEvents, addEventListeners, removeEventListeners, addPathEvent } from '../util/mouseAction';
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
         <title>Arlotta Mattia - Photograph</title>
         <meta name="description" content="Personal portfolio of the best photos I made" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#1b1b1b" />
+        <meta name="theme-color" content="var(--black)" />
         <link rel="preload" fetchpriority="high" as="image" href={home.image.data.attributes.url} type="image/webp" />
       </Head>
 
@@ -45,6 +45,7 @@ export default function Home() {
             textRight={home.textRight}
             image={home.image.data.attributes.url}
             category={category}
+            path={path}
             addPathEvent={addPathEvent}
           />
 

@@ -2,7 +2,6 @@ import styles from '../styles/Posts.module.css';
 import Modal from './Modal';
 import { useState } from "react";
 
-
 export default function Posts({
   posts
 }) {
@@ -11,12 +10,15 @@ export default function Posts({
       {posts.map((item, idx) => {
         const [modal, setModal] = useState(false);
         return (
-          <div className={styles.post}>
-            <img 
-              key={idx} 
-              src={item.attributes.image.data.attributes.url}
-              onClick={() => setModal(true)}
-            />
+          <div key={idx} className={styles.post}>
+            <a>
+              <img 
+                id={`img${item.attributes.title}`}
+                className='image'
+                src={item.attributes.image.data.attributes.url}
+                onClick={() => setModal(true)}
+              />
+            </a>
             {modal && 
               <Modal 
                 item={item} 

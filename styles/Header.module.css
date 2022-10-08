@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 40px;
   align-items: center;
 }
 
@@ -25,24 +25,6 @@
   color: var(--orange);
 }
 
-.button 
-{
-  background-color: var(--black);
-  color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.5);
-  border: 1px solid var(--black)!important;
-}
-
-.button:hover
-{
-  border: 1px solid var(--white)!important;
-  background-color: var(--white);
-  color: var(--black);
-  border-bottom: 1px solid var(--black);
-}
-
 .menu ul
 {
   display: flex;
@@ -55,6 +37,9 @@
   padding: 0 20px;
   font-size: var(--small);
   font-weight: var(--thin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu ul li:hover:nth-child(odd) a
@@ -132,24 +117,5 @@
   .menu ul li:hover:nth-child(even) a
   {
     border-bottom: none;
-  }
-
-  .button 
-  {
-    background-color: none;
-    color: white;
-    border-radius: none;
-    padding: 0;
-    box-shadow: none;
-    font-size: var(--standard);
-    font-weight: var(--thin);
-    text-decoration: underline;
-  }
-
-  .button:hover
-  {
-    border: none!important;
-    background-color: transparent;
-    color: var(--white);
   }
 }

@@ -4,20 +4,20 @@ import { useQuery } from "urql";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Cursor from '../../components/Cursor';
-import Projects from "../../components/Projects";
+import Posts from "../../components/Posts";
 import Summary from "../../components/Summary";
 import styles from '../../styles/Page.module.css';
-import {  GET_CATEGORY_QUERY } from "../../data/query";
+import {  GET_POST_QUERY } from "../../data/query";
 import { menu, footer, socials, path }  from '../../data/local';
 import {addLinkEvents, addEventListeners, removeEventListeners} from '../../util/mouseAction';
 
-export default function Category(){
+export default function Project(){
     
   const { query } = useRouter();
 
   const [results] = useQuery(
     {
-      query: GET_CATEGORY_QUERY,
+      query: GET_POST_QUERY,
       variables: {
         slug: query.slug,
       }
@@ -29,15 +29,15 @@ export default function Category(){
   if(error) return <p>Error... {error.message}</p>;
 
 
-  const category = data.categories.data[0].attributes;
-  const projects = category.projects.data;
+  const projects = data.projects.data[0].attributes;
+  const posts = projects.posts.data;
   
   return (
     <div>
 
       <Head>
-        <title>Arlotta Mattia - {category.name}</title>
-        <meta name="description" content={`Collection of my photos from the category ${category.name}`} />
+        <title>Arlotta Mattia - {projects.title}</title>
+        <meta name="description" content={`This is my single photo ${projects.title}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -48,11 +48,11 @@ export default function Category(){
       <main className={styles.main}>
         <section className={styles.col}>
           <Summary 
-          props={category} 
-          breadcrumb={category.name}
+          props={projects} 
+          breadcrumb={projects.category.data.attributes.name}
           path={path}
-        />
-          <Projects projects={projects} />
+          />
+          <Posts posts={posts} />
         </section>
       </main>
 

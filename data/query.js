@@ -28,6 +28,40 @@ export const GET_CATEGORY_QUERY = `
         attributes {
           name,
           slug,
+          title,
+          description,
+          projects {
+            data {
+              id,
+              attributes {
+                title,
+                description,
+                slug,
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+  }
+`;
+
+export const GET_POST_QUERY = `
+  query getPosts($slug: String!) {
+    projects(filters: {slug: { eq: $slug}}) {
+      data {
+        id,
+        attributes {
+          title,
+          slug,
+          description,
           posts {
             data {
               id,
@@ -42,6 +76,14 @@ export const GET_CATEGORY_QUERY = `
                     }
                   }
                 }
+              }
+            }
+          },
+          category {
+            data {
+              attributes {
+                name, 
+                slug,
               }
             }
           }

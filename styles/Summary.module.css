@@ -1,12 +1,40 @@
-.col50
+.col
 {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     position: -webkit-sticky;
     position: sticky;
     top: 50%;
     height: 50%;
-    width: 50%;
-    border: 1px solid red;
+    width: 33%;
+    transform: translateY(-50%);
+}
+
+.col h3
+{
+    font-size: var(--small);
+    font-weight: var(--normal);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.col h2
+{
+    font-size: var(--big);
+    font-weight: var(--blackbold);
+    margin-bottom: 20px;
+}
+
+.col p
+{
+    font-size: var(--small);
+    margin-bottom: 20px;
+}
+
+.col div
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
