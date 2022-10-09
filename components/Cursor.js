@@ -27,7 +27,7 @@ export default function Cursor({
     };
   
     addEventListeners(mMove, mEnter, mLeave);
-    addLinkEvents(setLinkHover);
+    addLinkEvents(setLinkHover, 'a');
 
     return () => removeEventListeners(mMove, mEnter, mLeave);
   }, []);

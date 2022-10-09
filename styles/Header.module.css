@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.header svg 
+{
+  display: none;
+}
+
 .logo
 {
   font-size: var(--small);
@@ -59,10 +64,12 @@
   .logo
   {
     z-index: 2;
-    color: var(--white);
+    color: var(--black);
   }
+
   .menu 
   {
+    transition: all 0.33s cubic-bezier(.215, .61, .355, 1);
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -71,6 +78,7 @@
     background-color: var(--black);
     display: flex;
     z-index: 1;
+    opacity: 0;
   }
 
   .menu ul
@@ -89,6 +97,7 @@
     font-weight: var(--blackbold);
     padding: 10px 20px;
     margin-bottom: 20px;
+    justify-content: flex-start;
   }
 
   .menu ul li:nth-child(odd)
@@ -117,5 +126,13 @@
   .menu ul li:hover:nth-child(even) a
   {
     border-bottom: none;
+  }
+
+  .header svg 
+  {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    display: block;
   }
 }

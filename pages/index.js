@@ -44,9 +44,9 @@ export default function Home() {
             textLeft={home.textLeft}
             textRight={home.textRight}
             image={home.image.data.attributes.url}
+            addLinkEvents={addLinkEvents}
             category={category}
             path={path}
-            addPathEvent={addPathEvent}
           />
 
       </main>

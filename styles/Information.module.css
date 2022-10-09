@@ -2,11 +2,10 @@
 {
     background-color: var(--white);
     position: absolute;
-    bottom: 40px;
     right: 40px;
     border-radius: 20px;
     padding: 40px;
-    transition: all 0.33s cubic-bezier(.215, .61, .355, 1);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
     max-width: 400px;
 }
 

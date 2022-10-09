@@ -8,7 +8,7 @@ export default function Hero({
   textRight, 
   category, 
   image,
-  addPathEvent,
+  addLinkEvents,
   path
 }) {
 
@@ -25,7 +25,7 @@ export default function Hero({
     }
   }, []);
 
-  addPathEvent(setLinkHover);
+  addLinkEvents(setLinkHover, '#category0');
   
   return (
     <section className={styles.container}>

@@ -1,16 +1,5 @@
-export const addLinkEvents = (hover) => {
-  document.querySelectorAll('a').forEach((el) => {
-    el.addEventListener('mouseover', () => hover(true));
-    el.addEventListener('mouseout', () => hover(false));
-  });
-   document.querySelectorAll('button').forEach((el) => {
-    el.addEventListener('mouseover', () => hover(true));
-    el.addEventListener('mouseout', () => hover(false));
-  });
-};
-
-export const addPathEvent = (hover) => {
-  document.querySelectorAll('#category0').forEach((el) => {
+export const addLinkEvents = (hover, tag) => {
+  document.querySelectorAll(tag).forEach((el) => {
     el.addEventListener('mouseover', () => hover(true));
     el.addEventListener('mouseout', () => hover(false));
   });

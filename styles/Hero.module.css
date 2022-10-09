@@ -128,3 +128,26 @@
     width: 100%;
     max-width: 600px;
 }
+
+@media (max-width: 768px) {
+    .container h2
+    {
+        font-size: var(--medium);
+        margin-bottom: 120px;
+    }
+
+    .col p
+    {
+        font-size: var(--small);
+    }
+
+    .image
+    {
+        transform: translate(-50%, 25%);
+    }
+
+    .container svg
+    {
+        transform: translate(-50%, 25%);
+    }
+}

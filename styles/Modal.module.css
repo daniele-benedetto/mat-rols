@@ -53,6 +53,11 @@
     cursor: pointer;
 }
 
+.info:hover .information
+{
+    opacity: 1;
+}
+
 .vertical
 {
     width: auto!important;
