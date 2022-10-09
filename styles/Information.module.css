@@ -1,0 +1,35 @@
+.information
+{
+    background-color: var(--white);
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.33s cubic-bezier(.215, .61, .355, 1);
+    max-width: 400px;
+}
+
+.information div h4
+{
+    font-size: var(--standard);
+    font-weight: var(--bold);
+    font-family: var(--fira), sans-serif;
+    padding: 5px;
+}
+
+.information div p
+{
+    font-size: var(--small);
+    font-weight: var(--thin);
+    font-family: var(--inter), sans-serif;
+    padding: 5px;
+}
+
+.information svg
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}

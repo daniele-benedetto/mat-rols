@@ -11,7 +11,7 @@ export default function Social() {
           return (
             <li key={idx}>
               <Link href={`https://${item.url}`}>
-                <a>
+                <a target='_blank'>
                   {item.name}
                 </a>
               </Link>

@@ -32,15 +32,10 @@
     position: relative;
     width: 100%;
     box-shadow: 5px 5px 20px rgba(0,0,0,.30);
+    max-width: 920px;
 }
 
-.modal div
-{
-    width: 100%;
-    max-width: 1020px;
-}
-
-.modal svg 
+.close
 {
     position: absolute;
     right: 20px;
@@ -49,20 +44,13 @@
     cursor: pointer;
 }
 
-.modal div h4
+.info
 {
-    font-size: var(--standard);
-    font-weight: var(--thin);
-    font-family: var(--inter), sans-serif;
-    padding: 5px;
-}
-
-.modal div p
-{
-    font-size: var(--small);
-    font-weight: var(--thin);
-    font-family: var(--inter), sans-serif;
-    padding: 5px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .vertical
