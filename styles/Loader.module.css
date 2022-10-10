@@ -14,74 +14,48 @@
 
 .spinner {
    position: relative;
-   width: 88px;
-   height: 88px;
+   width: 80px;
+   height: 80px;
+   animation: spinner-xza56z 2s infinite linear;
 }
 
-.spinner > div {
-   width: 100%;
-   height: 100%;
-   border-radius: 50%;
-   border: 21.1px solid rgba(71,75,255,0.1);
-   position: absolute;
-   top: 0;
-   left: 0;
-   animation: spinner-g7vlvwhg 0.78s linear infinite;
-   z-index: 0;
-}
-
-.spinner > div::before {
+.spinner::before,
+.spinner::after {
    content: '';
-   height: 21.1px;
-   width: 21.1px;
-   border-radius: 50%;
-   background: var(--pink);
    position: absolute;
    top: 50%;
-   animation: spinner-h1vps1hg 1.56s infinite reverse steps(1);
-   transform: translate(calc(2 * var(--translate-2)), calc(var(--translate) * 1%));
-   z-index: 1;
+   left: 50%;
+   border-radius: 50%;
+   animation: spinner-lqsq3g 1.25s infinite ease;
 }
 
-.spinner > div:nth-of-type(1) {
-   --translate: -50;
-   --translate-2: calc(88px / 8);
+.spinner::before {
+   height: 100%;
+   width: 100%;
+   transform-origin: -40% -80%;
+   background-color: var(--pink);
 }
 
-.spinner > div:nth-of-type(1)::before {
-   right: 0;
+.spinner::after {
+   height: 75%;
+   width: 75%;
+   transform-origin: 40% 80%;
+   background-color: var(--orange);
+   z-index: -1;
 }
 
-.spinner > div:nth-of-type(2) {
-   --translate: 50;
-   --translate-2: calc(-88px / 8);
-   animation-delay: 0.78s;
-   animation-direction: reverse;
-   transform: translate(33.45px, 0);
+@keyframes spinner-xza56z {
+   to {
+      transform: rotate(360deg);
+   }
 }
 
-.spinner > div:nth-of-type(2)::before {
-   left: 0;
-   transform: translate(calc(-88px / 4), -50%);
-   animation-direction: normal;
-}
-
-@keyframes spinner-h1vps1hg {
-   0% {
-      opacity: 0;
+@keyframes spinner-lqsq3g {
+   0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
    }
 
    50% {
-      opacity: 1;
-   }
-}
-
-@keyframes spinner-g7vlvwhg {
-   from {
-      transform: translate(calc(var(--translate) * 1%), 0) translate(calc(var(--translate-2)), 0) rotate(0deg);
-   }
-
-   to {
-      transform: translate(calc(var(--translate) * 1%), 0) translate(calc(var(--translate-2)), 0) rotate(360deg);
+      transform: translate(-50%, -50%) scale(0);
    }
 }

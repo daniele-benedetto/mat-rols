@@ -1,6 +1,7 @@
 import styles from '../styles/Posts.module.css';
 import Modal from './Modal';
 import { useState } from "react";
+import {motion} from 'framer-motion';
 
 export default function Posts({
   posts
@@ -10,7 +11,18 @@ export default function Posts({
       {posts.map((item, idx) => {
         const [modal, setModal] = useState(false);
         return (
-          <div key={idx} className={styles.post}>
+          <motion.div 
+            key={idx} 
+            className={styles.post}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.33 }}
+            variants={{
+              visible: { opacity: 1, y: 0},
+              hidden: { opacity: 0, y: 40}
+            }}
+          >
             <a>
               <img 
                 id={`img${item.attributes.title}`}
@@ -25,7 +37,7 @@ export default function Posts({
                 setModal={setModal}
               />
             }
-          </div>
+          </motion.div>
         );
       })}
     </div>

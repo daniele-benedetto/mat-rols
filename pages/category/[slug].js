@@ -25,7 +25,7 @@ export default function Category(){
 
   const { data: data, fetching: fetching, error: error } = results;
 
-  if(fetching) return <p>Loading...</p>;
+  if(fetching) return <p>...</p>;
   if(error) return <p>Error... {error.message}</p>;
 
 
